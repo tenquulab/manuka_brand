@@ -1,0 +1,471 @@
+/* 基本スタイルとリセット */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+h1 {
+    color: #0B2C67;
+}
+
+.header-container,
+.product-container,
+.product-details-accordion,
+.footer-container,
+.footer-copyright {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-nav > ul {
+    display: flex;
+    gap: 25px;
+  }
+
+.header-nav a {
+    color: #0B2C67;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-icons .icon {
+    width: 22px;
+    height: 22px;
+    fill: #333;
+}
+
+/* メインコンテンツ */
+.product-main {
+    padding: 40px 0;
+}
+
+.product-container {
+    display: flex;
+    gap: 40px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.product-gallery {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 1 1 50%;
+}
+
+.product-vendor {
+    font-size: 16px;
+    color: #0B2C67;
+    margin-bottom: 8px;
+}
+
+.product-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.product-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0B2C67;
+    margin-bottom: 20px;
+}
+
+.tax-note {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    margin-left: 8px;
+}
+
+.product-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.product-description p {
+    margin-bottom: 1em;
+}
+
+.product-description ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0B2C67;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 0 6px 2px #F3BA37;
+    transition: all 0.3s ease;
+}
+
+/* アコーディオン */
+.product-details-accordion {
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+.accordion-item:first-child {
+    border-top: 1px solid #e5e5e5;
+}
+
+.accordion-content {
+    display: none;
+    padding: 0 20px 20px;
+    line-height: 1.7;
+    background-color: #fff;
+}
+.accordion-item.active .accordion-content {
+    display: block;
+}
+.accordion-title {
+    padding: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+}
+.accordion-title::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 24px;
+    font-weight: 400;
+}
+.accordion-item.active .accordion-title::after {
+    content: '-';
+}
+.accordion-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+    display: block;
+}
+
+/* フッター */
+.site-footer-bottom {
+    background-color: #0B2C67;
+    color: #fff;
+    padding: 40px 0 20px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+.footer-column a, .footer-column p {
+    color: #ccc;
+    font-size: 14px;
+}
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.recommend-section {
+    margin: 60px auto 0;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+.recommend-title {
+    color: #0B2C67;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    text-align: left;
+}
+.recommend-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+.recommend-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    padding: 20px 10px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recommend-card img {
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+}
+.recommend-name {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+.recommend-price {
+    font-size: 1.1rem;
+    color: #0B2C67;
+    font-weight: bold;
+}
+
+/* モバイル対応：2列に */
+@media (max-width: 749px) {
+    .recommend-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .recommend-card img {
+        width: 120px;
+    }
+}
+
+/* --- レスポンシブ対応 --- */
+
+/* タブレット (〜989px) */
+@media (max-width: 989px) {
+    .header-nav {
+        display: none; /* モバイルではハンバーガーメニューにするのが一般的ですが、今回は非表示にします */
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+}
+
+/* モバイル (〜749px) */
+@media (max-width: 749px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    .product-main {
+        padding: 20px 0;
+    }
+    .product-container {
+        padding: 20px;
+    }
+    .product-title {
+        font-size: 24px;
+    }
+    .product-price {
+        font-size: 22px;
+    }
+    .footer-container {
+        flex-direction: column;
+    }
+    .footer-column {
+        margin-bottom: 20px;
+    }
+}
+
+.reviews-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.reviews-title {
+    color: #0B2C67;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    text-align: left;
+}
+.review-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.review-item {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid #c4e7e4;
+    padding: 16px 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.review-stars {
+    color: #339999;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+.review-date {
+    color: #aaaaaa;
+    font-size: 0.8em;
+    min-width: 100px;
+    text-align: right;
+    font-weight: 400;
+}
+.review-author {
+    font-weight: normal;
+    color: #339999;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+}
+.review-title {
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #50608D;
+}
+.review-body {
+    font-size: 1rem;
+    color: #50608D;
+}
+
+.review-header, .review-author, .review-title, .review-body {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* モバイル対応 */
+@media (max-width: 749px) {
+    .reviews-section {
+        padding: 0 8px;
+    }
+    .review-list {
+        /* padding: 0 8px; 削除 */
+    }
+    .review-item {
+        margin: 0;
+        padding: 16px 8px 14px;
+    }
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+    .review-date {
+        text-align: left;
+        min-width: unset;
+        font-size: 0.95rem;
+        padding-right: 8px;
+    }
+}
+
+.submenu {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  border: 1px solid #1a237e;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 260px;
+  z-index: 100;
+  padding: 8px 8px;
+}
+
+.submenu li {
+  display: block;
+  width: 100%;
+}
+
+.has-submenu {
+  position: relative;
+}
+
