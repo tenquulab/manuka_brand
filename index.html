@@ -104,12 +104,12 @@
     <main class="product-main">
         <div class="product-container">
             <div class="product-gallery">
-                <img src="TAG_FRONT_400.webp" alt="マヌカハニー MGO 400+ 500gの商品画像" class="main-product-image">
+                <img src="TAG_FRONT_400.webp" alt="マヌカハニー MGO 400+ 500gの商品画像" class="main-product-image" id="mainProductImage">
                 <div class="product-thumbnails">
-                  <img src="TAG_FRONT_400.webp" alt="サムネイル1" class="thumbnail">
-                  <img src="TAG_FRONT_400.webp" alt="サムネイル2" class="thumbnail">
-                  <img src="TAG_FRONT_400.webp" alt="サムネイル3" class="thumbnail">
-                  <img src="TAG_FRONT_400.webp" alt="サムネイル4" class="thumbnail">
+                  <img src="TAG_FRONT_400.webp" alt="サムネイル1" class="thumbnail active" data-img="TAG_FRONT_400.webp">
+                  <img src="TAG_FRONT_400.webp" alt="サムネイル2" class="thumbnail" data-img="TAG_FRONT_400.webp">
+                  <img src="TAG_FRONT_400.webp" alt="サムネイル3" class="thumbnail" data-img="TAG_FRONT_400.webp">
+                  <img src="TAG_FRONT_400.webp" alt="サムネイル4" class="thumbnail" data-img="TAG_FRONT_400.webp">
                 </div>
             </div>
             <div class="product-info">
@@ -327,6 +327,17 @@
           });
           parent.classList.toggle('open');
         });
+      });
+    });
+    // 商品画像ギャラリー切り替え
+    document.querySelectorAll('.thumbnail').forEach(function(thumb) {
+      thumb.addEventListener('mouseenter', function() {
+        var mainImg = document.getElementById('mainProductImage');
+        mainImg.src = this.getAttribute('data-img');
+        document.querySelectorAll('.thumbnail').forEach(function(t) {
+          t.classList.remove('active');
+        });
+        this.classList.add('active');
       });
     });
     </script>
