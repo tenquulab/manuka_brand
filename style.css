@@ -338,6 +338,47 @@ h1 {
     transition: all 0.3s ease;
 }
 
+/* 3つのボタンを横並びに配置 */
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* フッターのボタングループも横並びに配置 */
+.footer-button-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* よくある質問ボタンのスタイル */
+.faq-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: #0B2C67;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.faq-button:hover {
+    border-color: #005baa;
+    text-decoration: none;
+}
+
+.faq-button::before {
+    content: "→ ";
+    margin-right: 5px;
+}
+
 /* アコーディオン */
 .product-details-accordion {
     margin-top: 40px;
