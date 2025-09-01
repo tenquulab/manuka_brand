@@ -80,35 +80,7 @@ h1 {
 .header-icons {
     display: flex;
     align-items: center;
-}
-
-/* 検索フォームのスタイル */
-.header-container form {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.header-container form input {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    max-width: 200px;
-    flex-shrink: 0;
-}
-
-.header-container form button {
-    padding: 8px 16px;
-    background-color: #0B2C67;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    white-space: nowrap;
-    flex-shrink: 0;
+    gap: 20px;
 }
 
 .hamburger {
@@ -136,84 +108,13 @@ h1 {
     height: 24px;
     fill: #444444;
 }
-.header-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;            /* 枠のサイズ */
-    height: 40px;
-    background-color: #f5f5f5; /* 背景色 */
-    border-radius: 50%;     /* 丸くする */
-    border: 1px solid #ccc; /* 枠線（薄め） */
-    margin-left: 8px;       /* アイコン間のスペース（任意） */
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-  }
-  
-  .header-icons a:hover {
-    background-color: #e0e0e0; /* ホバー時の背景色 */
-  }
-  
-  .header-icons svg.icon {
-    width: 20px;
-    height: 20px;
-    fill: #333; /* アイコンの色 */
-  }
-
-  .header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* 右寄せ！ */
-    gap: 8px;
-  }
-  
-  .header-search {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-   @media (max-width: 488px) {
-  .header-right {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-  }
-
-  .header-search {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 100%;
-    gap: 8px;
-  }
-
-  .header-search input {
-    flex-grow: 1;
-    width: 100%;
-    min-width: 0;
-  }
-
-  .header-search button {
-    width: auto;
-    white-space: nowrap;
-  }
-  /* ▼▼ 検索フォームをモバイル時に下段へ ▼▼ */
-.header-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-  }
-  
-  .header-form {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
+.header-icons .icon {
+    width: 22px;
+    height: 22px;
+    fill: #333;
 }
-
+  
+  
 /* メインコンテンツ */
 .product-main {
     padding: 40px 0;
@@ -419,40 +320,6 @@ h1 {
     color: #fff;
 }
 
-/* フッターのメールマガジン登録フォーム */
-.footer-column form {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 15px;
-}
-
-.footer-column form input[type="email"] {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    min-width: 200px;
-    flex-shrink: 0;
-}
-
-.footer-column form input[type="submit"] {
-    padding: 8px 16px;
-    background-color: #0B2C67;
-    color: white;
-    border: 1px solid white;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: background-color 0.2s;
-}
-
-.footer-column form input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
 .footer-copyright {
     text-align: center;
     border-top: 1px solid #555;
@@ -635,6 +502,8 @@ h1 {
         font-size: 20px;
     }
 }
+
+
 
 .reviews-section {
     max-width: 1200px;
@@ -926,25 +795,5 @@ h1 {
 @media (min-width: 990px) {
   .drawer, .drawer-overlay { display: none !important; }
 }
-
-.header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    gap: 8px;
-    max-width: 100%; /* はみ出し防止！ */
-    box-sizing: border-box;
-  }
-.header-search {
-    display: flex;
-    justify-content: flex-end;  /* ← 右寄せ！ */
-    align-items: center;
-    gap: 8px;
-    width: auto; 
-    flex-wrap: wrap; /* 小さい画面で折り返し可 */
-    max-width: 100%;
-  }
-
 
   

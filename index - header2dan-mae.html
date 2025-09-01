@@ -83,27 +83,23 @@
                     </li>
                 </ul>
             </nav>
-            
-            <div class="header-right">
-              <div class="header-icons">
-                <a href="/mypage.html" aria-label="マイページ">
-                  <svg class="icon icon-user" aria-hidden="true" focusable="false">
-                    <use href="#icon-user"></use>
-                  </svg>
-                </a>
-                <a href="/cart.html" aria-label="カート">
-                  <svg class="icon icon-cart" aria-hidden="true" focusable="false">
-                    <use href="#icon-cart"></use>
-                  </svg>
-                </a>
-              </div>
-              <form method="get" action="/shopsearch/shopsearch.aspx" class="header-search">
-                <input type="text" name="keyword" placeholder="キーワードを入力">
-                <button type="submit">検索</button>
-              </form>
+            <form method="get" action="/shopsearch/shopsearch.aspx">
+              <input type="text" name="keyword" placeholder="キーワードを入力">
+              <button type="submit">検索</button>
+            </form>
+            <div class="header-icons">
+              <a href="/mypage.html" aria-label="マイページ">
+                <svg class="icon icon-user" aria-hidden="true" focusable="false">
+                  <use href="#icon-user"></use>
+                </svg>
+              </a>
+              <a href="/cart.html" aria-label="カート">
+                <svg class="icon icon-cart" aria-hidden="true" focusable="false">
+                  <use href="#icon-cart"></use>
+                </svg>
+              </a>
             </div>
-          
-          </div>
+        </div>
     </header>
 
     <main class="product-main">

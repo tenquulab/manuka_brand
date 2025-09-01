@@ -124,16 +124,45 @@ h1 {
 }
 
 .product-gallery {
-    flex: 1 1 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .main-product-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+  width: 502px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: block;
+}
+
+.product-thumbnails {
+  display: flex;
+  gap: 7px;
+  margin-top: 10px;
+  width: 502px;
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+.thumbnail {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 1.5px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+  border: 2.5px solid #005baa;
 }
 
 .product-info {
@@ -370,6 +399,23 @@ h1 {
         display: flex;
         position: static;
     }
+    
+    /* 商品画像のタブレット対応 */
+    .product-gallery {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .main-product-image {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .product-thumbnails {
+        width: 100%;
+        max-width: 500px;
+        justify-content: center;
+    }
 }
 
 /* モバイル (〜749px) */
@@ -394,6 +440,60 @@ h1 {
     }
     .footer-column {
         margin-bottom: 20px;
+    }
+    
+    /* 商品画像のモバイル対応 */
+    .product-gallery {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .main-product-image {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .product-thumbnails {
+        width: 100%;
+        max-width: 400px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .thumbnail {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+    }
+}
+
+/* より小さなスマートフォン対応 (〜480px) */
+@media (max-width: 480px) {
+    .product-container {
+        padding: 15px;
+    }
+    
+    .main-product-image {
+        max-width: 100%;
+    }
+    
+    .product-thumbnails {
+        max-width: 100%;
+        gap: 8px;
+    }
+    
+    .thumbnail {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .product-title {
+        font-size: 20px;
+    }
+    
+    .product-price {
+        font-size: 20px;
     }
 }
 
@@ -486,6 +586,28 @@ h1 {
         font-size: 0.95rem;
         padding-right: 8px;
     }
+}
+
+.review-more {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+.review-more-btn {
+  background: #339999;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 28px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(51,153,153,0.08);
+}
+.review-more-btn:hover,
+.review-more-btn:focus {
+  background: #227777;
 }
 
 .submenu {
@@ -596,10 +718,13 @@ h1 {
 }
 .drawer-nav li {
   width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .drawer-nav a {
   display: block;
   width: 100%;
+  box-sizing: border-box;
   padding: 18px 32px;
   color: #23336a;
   font-size: 1.25rem;
@@ -609,6 +734,55 @@ h1 {
 .drawer-nav a:hover,
 .drawer-nav a:focus {
   background: #f5f6fa;
+}
+.drawer-nav .has-drawer-submenu {
+  position: relative;
+}
+.drawer-nav .drawer-submenu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 32px;
+  color: #23336a;
+  font-size: 1.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  overflow: hidden;
+}
+.drawer-nav .submenu-arrow {
+  margin-left: 8px;
+  font-size: 1.1em;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  margin-right: 0;
+}
+.drawer-nav .has-drawer-submenu.open > .drawer-submenu-toggle .submenu-arrow {
+  transform: rotate(90deg);
+}
+.drawer-submenu {
+  display: none;
+  flex-direction: column;
+  background: #f5f6fa;
+  padding-left: 0;
+  margin: 0;
+  border-left: 3px solid #e0e3ef;
+}
+.drawer-nav .has-drawer-submenu.open > .drawer-submenu {
+  display: flex;
+}
+.drawer-submenu li a {
+  padding: 14px 40px;
+  font-size: 1.08rem;
+  color: #23336a;
+  background: none;
+}
+.drawer-submenu li a:hover,
+.drawer-submenu li a:focus {
+  background: #e9eaf3;
 }
 @media (min-width: 990px) {
   .drawer, .drawer-overlay { display: none !important; }
