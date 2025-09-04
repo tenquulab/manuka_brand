@@ -214,86 +214,6 @@ h1 {
   
 }
 
-.header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    gap: 8px;
-    max-width: 100%; /* はみ出し防止！ */
-    box-sizing: border-box;
-  }
-.header-search {
-    display: flex;
-    justify-content: flex-end;  /* ← 右寄せ！ */
-    align-items: center;
-    gap: 8px;
-    width: auto; 
-    flex-wrap: wrap; /* 小さい画面で折り返し可 */
-    max-width: 100%;
-  }
-
-/* 基準：吹き出しを右上にアンカー */
-.header-right { position: relative; }
-
-/* デスクトップではトグル隠す／フォームは通常表示 */
-.search-toggle { display: none; }
-.search-popover { position: static; box-shadow: none; border: 0; padding: 0; }
-
-/* アクセシビリティ用（画面外ラベル） */
-.sr-only {
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-}
-
-/* ▼▼ 488px以下で挙動切替 ▼▼ */
-@media (max-width: 488px) {
-  .header-icons{
-    display: flex;
-    flex-direction: column;   /* ← 縦並びにする */
-    align-items: flex-end;    /* ← 右寄せ */
-    gap: 8px;                 /* アイコン間の縦余白 */
-  }
-  .search-slot{
-    position:relative;          /* ★基準 */
-    flex: 0 0 auto; 
-    display:flex; 
-	justify-content:flex-end;
-  }
-
-  .search-toggle{
-    display:flex; align-items:center; justify-content:center;
-    width:40px; height:40px; border:1px solid #ccc; border-radius:50%;
-    background:#fff; cursor:pointer;
-  }
-
-  /* 吹き出しは .search-slot を基準に出す */
-  .search-popover{
-    position:absolute;
-    right:0;
-    top:calc(100% + 8px); 
-    display:none;
-    background:#fff; border:1px solid #e5e7eb; border-radius:10px;
-    box-shadow:0 8px 24px rgba(0,0,0,.12);
-    padding:12px; z-index:1000; width:min(92vw,320px);
-  }
-  .search-popover.open{ display:block !important; }
-
-  /* しっぽを🔍側に */
-  .search-popover::before{
-    content:""; position:absolute; top:-8px; right:18px;
-    width:14px; height:14px; background:#fff;
-    border-left:1px solid #e5e7eb; border-top:1px solid #e5e7eb;
-    transform:rotate(45deg);
-  }
-
-  .header-search{ display:flex; gap:8px; width:100%; }
-  .header-search input{ width:100%; min-width:0; }
-}
-
-
-
-
 /* メインコンテンツ */
 .product-main {
     padding: 40px 0;
@@ -1048,6 +968,24 @@ h1 {
   .drawer, .drawer-overlay { display: none !important; }
 }
 
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 8px;
+    max-width: 100%; /* はみ出し防止！ */
+    box-sizing: border-box;
+  }
+.header-search {
+    display: flex;
+    justify-content: flex-end;  /* ← 右寄せ！ */
+    align-items: center;
+    gap: 8px;
+    width: auto; 
+    flex-wrap: wrap; /* 小さい画面で折り返し可 */
+    max-width: 100%;
+  }
 
 
   

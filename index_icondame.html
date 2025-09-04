@@ -17,12 +17,9 @@
       <symbol id="icon-cart" viewBox="0 0 24 24">
         <path fill="currentColor" d="M2.25 2.25a.75.75 0 000 1.5h1.128l.857 3.428 1.592 6.368A3 3 0 008.688 15h8.134a3 3 0 002.861-2.028l2.14-6.107a.75.75 0 00-.71-1.015H6.223l-.285-1.14A1.5 1.5 0 004.486 3.75H2.25zM10.5 20.25a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm7.5 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
       </symbol>
-	  
-	  <symbol id="icon-search" viewBox="0 0 24 24">
-		<path fill="currentColor" d="M10.5 3a7.5 7.5 0 015.965 12.036l4.249 4.25a.75.75 0 01-1.06 1.06l-4.25-4.249A7.5 7.5 0 1110.5 3zm0 1.5a6 6 0 100 12 6 6 0 000-12z"/>
-	  </symbol>
     </svg>
-
+    </svg>
+    
     
 </head>
 <body>
@@ -90,7 +87,7 @@
                         <a href="#" class="nav-link">私たちについて</a>
                         <ul class="submenu">
                             <li><a href="https://www.cosana.com/en/pages/unsere-anlage">私たちの工場</a></li>
-                            <li><a href="ttps://www.cosana.com/en/pages/zertifikate">私たちの認証</a></li>
+                            <li><a href="https://www.cosana.com/en/pages/zertifikate">私たちの認証</a></li>
                             <li><a href="https://www.cosana.com/en/pages/about-us">私たちのチーム</a></li>
                             <li><a href="https://www.cosana.com/en/blogs/news">お知らせ</a></li>
                         </ul>
@@ -98,38 +95,24 @@
                 </ul>
             </nav>
             
-			<div class="header-right">
-			  <div class="header-icons">
-				<a href="/mypage.html" aria-label="マイページ">
-				  <svg class="icon icon-user" aria-hidden="true" focusable="false">
-					<use href="#icon-user"></use>
-				  </svg>
-				</a>
-				<a href="/cart.html" aria-label="カート">
-				  <svg class="icon icon-cart" aria-hidden="true" focusable="false">
-					<use href="#icon-cart"></use>
-				  </svg>
-				</a>
-
-				<!-- ▼ モバイル用 検索トグル -->
-				<button id="searchToggle" class="search-toggle" type="button"
-						aria-label="検索を開く" aria-haspopup="true"
-						aria-expanded="false" aria-controls="mobileSearch">
-				  <svg class="icon icon-search" aria-hidden="true" focusable="false">
-					<use href="#icon-search"></use>
-				  </svg>
-				</button>
-			  </div>
-
-			  <!-- ▼フォームをラップ -->
-			  <div id="mobileSearch" class="search-popover">
-				<form method="get" action="/shopsearch/shopsearch.aspx" class="header-search" role="search">
-				  <label class="sr-only" for="global-q">サイト内検索</label>
-				  <input id="global-q" type="text" name="keyword" placeholder="キーワードを入力">
-				  <button type="submit">検索</button>
-				</form>
-			  </div>
-			</div>
+            <div class="header-right">
+              <div class="header-icons">
+                <a href="/mypage.html" aria-label="マイページ">
+                  <svg class="icon icon-user" aria-hidden="true" focusable="false">
+                    <use href="#icon-user"></use>
+                  </svg>
+                </a>
+                <a href="/cart.html" aria-label="カート">
+                  <svg class="icon icon-cart" aria-hidden="true" focusable="false">
+                    <use href="#icon-cart"></use>
+                  </svg>
+                </a>
+              </div>
+              <form method="get" action="/shopsearch/shopsearch.aspx" class="header-search">
+                <input type="text" name="keyword" placeholder="キーワードを入力">
+                <button type="submit">検索</button>
+              </form>
+            </div>
           
           </div>
     </header>
@@ -439,47 +422,7 @@
         this.classList.add('active');
       });
     });
-
     </script>
-	
-	<script>
-	(function(){
-	  var toggle = document.getElementById('searchToggle');
-	  var pop = document.getElementById('mobileSearch');
-	  if (!toggle || !pop) return;
-
-	  function closePop() {
-		pop.classList.remove('open');
-		toggle.setAttribute('aria-expanded', 'false');
-	  }
-
-	  toggle.addEventListener('click', function(e){
-		var willOpen = !pop.classList.contains('open');
-		pop.classList.toggle('open');
-		toggle.setAttribute('aria-expanded', String(willOpen));
-		if (willOpen) {
-		  setTimeout(function(){
-			var input = pop.querySelector('input, textarea');
-			if (input) input.focus();
-		  }, 0);
-		}
-		e.stopPropagation();
-	  });
-
-	  document.addEventListener('click', function(e){
-		if (!pop.contains(e.target) && !toggle.contains(e.target)) closePop();
-	  });
-
-	  document.addEventListener('keydown', function(e){
-		if (e.key === 'Escape') closePop();
-	  });
-
-	  window.addEventListener('resize', function(){
-		if (window.innerWidth > 488) closePop();
-	  });
-	})();
-	</script>
-
 
 </body>
 </html>
